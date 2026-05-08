@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "495cc8a2-76b6-49f3-a0b3-14f3816a28ca",
+		"name": "Guardrails API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "54634542",
+		"_collection_link": "https://sahilprakashpatil012-8143325.postman.co/workspace/sahil-patil's-Workspace~1e86120d-5c7f-4452-8e7a-fa38f12c13cf/collection/54634542-495cc8a2-76b6-49f3-a0b3-14f3816a28ca?action=share&source=collection_link&creator=54634542"
+	},
+	"item": [
+		{
+			"name": "Bot Comment Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"authorId\": {{authorId}},\r\n  \"authorType\": \"BOT\",\r\n  \"content\": \"{{content}}\",\r\n  \"depthLevel\": {{depthLevel}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/posts/2/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"2",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
